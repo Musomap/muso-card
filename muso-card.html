@@ -1,5 +1,5 @@
 <link rel="import" href="../core-icon-button/core-icon-button.html">
-<polymer-element name="muso-post" attributes="post">
+<polymer-element name="muso-card" attributes="card">
   <template>
     <style>
       :host{
@@ -8,7 +8,7 @@
     </style>
     <div layout vertical>
       <div>
-        {{post.info}}
+        {{card.info}}
       </div>
       <div>
         <core-icon-button
@@ -20,9 +20,9 @@
     </div>
   </template>
   <script>
-    Polymer('muso-post', {
+    Polymer('muso-card', {
       created: function() {
-        this.post = {};
+        this.card = {};
       },
       favoriteTap: function(event, detail, sender) {
         this.favorite = !this.favorite;
