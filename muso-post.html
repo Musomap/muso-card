@@ -1,0 +1,36 @@
+<link rel="import" href="../core-icon-button/core-icon-button.html">
+<polymer-element name="muso-post" attributes="post">
+  <template>
+    <style>
+      :host{
+        margin: 10px;
+        padding: 10px;
+        display: block;
+        border: 1px solid gray;
+      }
+    </style>
+    <div>
+      <div>
+        {{post.info}}
+      </div>
+      <div>
+        <core-icon-button
+          id="favicon"
+          icon="favorite"
+          on-tap="{{favoriteTap}}">
+        </core-icon-button>
+      </div>
+    </div>
+  </template>
+  <script>
+    Polymer('muso-post', {
+      created: function() {
+        this.post = {};
+      },
+      favoriteTap: function(event, detail, sender) {
+        this.favorite = !this.favorite;
+        this.fire('favorite-tap');
+      }
+    });
+  </script>
+</polymer-element>
